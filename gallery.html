@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>கே.எஸ்.மூர்த்தி | கேலரி</title>
+    <link rel="icon" type="image/x-icon" href="images/logos/footer1.png" />
+    <!--[if lt IE 9]>
+		<script src="js/html5. js" type="text/javascript"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.3.1" type="text/css" media="all" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Rufina:100,100italic,300,300italic,400,400italic,700,700italic&#038;subset=latin,latin-ext,cyrillic,cyrillic-ext" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Sintony:100,100italic,300,300italic,400,400italic,700,700italic&#038;subset=latin,latin-ext,cyrillic,cyrillic-ext" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="css/fontello/css/fontello.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/fontello/css/animation.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/fontello/css/fontello-admin.min.css" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/shortcodes.css" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="css/color-picker.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/theme-options.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/theme-options-datepicker.min.css" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="js/custom_menu/custom_menu.css" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="js/magnific-popup/magnific-popup.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="js/swiper/idangerous.swiper.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="js/swiper/idangerous.swiper.scrollbar.min.css" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="js/messages/_messages.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/ihover.min.css" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="js/rs-plugin/settings.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="js/prettyphoto/css/prettyPhoto.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="js/royalslider/royalslider.css" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="css/skins/politics.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/slider-style.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/custom-styles.css" type="text/css" media="all" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<style id="theme-skin-inline-css" type="text/css"></style>
+	<style id="theme-skin-inline-css" type="text/css">
+		/* Fix navbar logo positioning on scroll */
+		header.fixedTopMenu .logo a span[style*="margin-top: 17px"] {
+			margin-top: 5px !important;
+		}
+	</style>
+	<style>
+		/* Line-by-line reveal animation */
+		.reveal-line {
+			opacity: 0;
+			transform: translateY(20px);
+			transition: all 0.6s ease-out;
+		}
+
+		.reveal-line.revealed {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		.reveal-line:nth-child(1).revealed {
+			transition-delay: 0.1s;
+		}
+
+		.reveal-line:nth-child(2).revealed {
+			transition-delay: 0.3s;
+		}
+
+		/* About Us image positioning */
+		.about-image {
+			margin-top: -70px; /* Move image up on desktop */
+		}
+
+		@media (max-width: 768px) {
+			.about-image img {
+				height: 350px !important; /* Increase height on mobile */
+			}
+			.about-image {
+				margin-top: 0; /* Reset margin on mobile */
+			}
+		}
+
+		/* Modern button hover animations with arrows */
+		.theme_button {
+			position: relative;
+			overflow: hidden;
+			transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			border-radius: 25px !important;
+			padding: 14px 28px !important;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+			background-color: #E83737 !important;
+			color: #ffffff !important;
+			border: none !important;
+		}
+
+		/* Gallery content spacing below navbar */
+		.gallery-content-spacing {
+			margin-top: 100px; /* Add space below the fixed navbar */
+		}
+
+		.theme_button::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background-color: #000000;
+			transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			z-index: -1;
+		}
+
+		.theme_button:hover::before {
+			left: 0;
+		}
+
+		.theme_button:hover {
+			box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+		}
+
+		.theme_button:active {
+			transform: scale(1.02);
+			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+		}
+	</style>
+
+</head>
+<body class="home page fullscreen top_panel_above">
+    <a id="toc_home" class="sc_anchor" title="Home" data-description="<i>Return to Home</i> - <br>navigate to home page of the site" data-icon="icon-home" data-url="index.html" data-separator="yes"></a>
+    <a id="toc_top" class="sc_anchor" title="To Top" data-description="<i>Back to top</i> - <br>scroll to top of the page" data-icon="icon-up" data-url="" data-separator="yes"></a>
+    <!--[if lt IE 9]>
+		<div class="sc_infobox sc_infobox_style_error">
+			<div class="text-center">It looks like you're using an old version of Internet Explorer. For the best experience, please <a class="sc_infobox_custom_style_1" href="http://microsoft.com">update your browser</a> or learn how to <a class="sc_infobox_custom_style_2 href="http://browsehappy.com">browse happy</a>!</div>
+		</div>
+	<![endif]-->
+	<!-- Main Content -->
+    <div class="main_content">
+        <div class="boxedWrap">
+            <div class="fullScreenSlider">
+				<header class="noFixMenu menu_right with_user_menu">
+                <div class="topWrapFixed"></div>
+                <div class="topWrap">
+					<!-- User menu -->
+                    <div class="usermenu_area">
+                        <div class="main">
+                            <!--<div class="menuUsItem menuItemRight">
+                                <ul id="usermenu" class="usermenu_list">
+                                    <li class="usermenu_cart">
+                                        <a href="#" class="cart_button">
+											<span>Cart</span>
+											<b class="cart_total"><span class="amount">&pound;0.00</span></b>
+										</a>
+                                        <ul class="widget_area sidebar_cart sidebar">
+                                            <li>
+                                                <aside class="widgetWrap widget woocommerce widget_shopping_cart">
+                                                    <div class="hide_cart_widget_if_empty">
+                                                        <div class="widget_shopping_cart_content">
+															<ul class="cart_list product_list_widget ">
+																<li class="empty">No products in the cart.</li>
+															</ul>
+														</div>
+                                                    </div>
+                                                </aside>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="usermenu_controlPanel">
+                                        <a href="#"><span>John Doe</span></a>
+                                        <ul>
+                                            <li><a href="#" class="icon icon-doc-inv">New post</a></li>
+                                            <li><a href="#" class="icon icon-cog-1">Settings</a></li>
+                                            <li><a href="#" class="icon icon-logout">Log out</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="usermenu_sound">
+                                        <a href="#" class="icon-volume" title="Sounds on/off"></a>
+                                        <ul>
+                                            <li><a href="#" class="sound_mainmenu icon icon-check">Main Menu</a></li>
+                                            <li><a href="#" class="sound_othermenu icon icon-check">Other Menus</a></li>
+                                            <li><a href="#" class="sound_buttons icon icon-check">Buttons</a></li>
+                                            <li><a href="#" class="sound_links icon icon-check">Regular links</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>-->
+                            <div class="menuUsItem menuItemLeft">தொடர்பு கொள்க on 0800 123 4567 அல்லது <a href="#">support@themerex.net</a></div>
+                        </div>
+                    </div>
+					<!-- /User menu -->
+						<!-- Main menu -->
+						<div class="mainmenu_area">
+							<div class="main">
+								<div class="logo logo_left">
+									<a href="index.html">
+										<span style="display: block; margin-top: 17px; font-size: 70%;">கே.எஸ்.மூர்த்தி</span>
+										<!--<span class="logo_slogan">Experience. Commitment. Impact.</span>-->
+									</a>
+								</div>
+								<!-- Responsive menu as icon -->
+								<a href="#" class="openResponsiveMenu icon-menu" title="Menu"></a>
+
+								<!-- Menu area -->
+								<nav class="menuTopWrap topMenuStyleLine">
+									<ul id="mainmenu">
+										<!-- Homepage layouts -->
+										<li class="menu-item thumb_title custom_view_item">
+											<a title="முகப்பு" href="index.html">
+												<span class="menu_icon icon-home"></span>முகப்பு
+											</a>
+										</li>
+										<li class="menu-item thumb_title custom_view_item">
+											<a title="அறிமுகம்" href="about-us.html">
+												<span class="menu_icon icon-user"></span>அறிமுகம்
+											</a>
+										</li>
+										<li class="menu-item thumb_title custom_view_item">
+											<a title="சாதனைகள்" href="achievements.html">
+												<span class="menu_icon icon-trophy"></span>சாதனைகள்
+											</a>
+										</li>
+										<li class="menu-item thumb_title custom_view_item">
+											<a title="செய்திகள்" href="news.html">
+												<span class="menu_icon icon-doc"></span>செய்திகள்
+											</a>
+										</li>
+
+                                        <li class="menu-item menu-item-has-children">
+											<a title="கேலரி" href="#">
+												<span class="menu_icon icon-camera"></span>கேலரி
+											</a>
+											<ul class="sub-menu">
+
+												<li class="menu-item">
+													<a href="videos.html">வீடியோக்கள்</a>
+												</li>
+												<li class="menu-item">
+													<a href="gallery.html">புகைப்படத் தொகுப்பு</a>
+												</li>
+
+											</ul>
+										</li>
+										<li class="menu-item thumb_title custom_view_item">
+											<a title="தொடர்பு கொள்க" href="contact-us.html">
+												<span class="menu_icon icon-phone"></span>தொடர்பு கொள்க
+											</a>
+										</li>
+									</ul>
+								</nav>
+								<!-- /Menu area -->
+							</div>
+						</div>
+						<!-- /Main menu -->
+					</div>
+            </header>
+
+
+
+			<!-- Gallery Content -->
+			<div class="mainWrap without_sidebar gallery-content-spacing">
+				<div class="main">
+					<div class="content">
+						<div class="portfolioWrap">
+							<!--<div id="grid-3-columns" class="isotopeFiltr"></div>-->
+							<section class="portfolio isotope folio3col" data-columns="3">
+								<article class="isotopeElement post_format_standard hover_Dir odd flt_71 flt_66 flt_61">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/1.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">நாமக்கல்லில் நடமாடும் காய்கறி விற்பனை வண்டி வழங்கல்</a>
+												</h4>
+												<p>
+									              அமைச்சர் மா.மதிவேந்தன், K.S.மூர்த்தி, எம்.பி. V.S.மாதேஸ்வரன் ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் பயனாளிகளுக்கு நடமாடும் காய்கறி வண்டியை வழங்கினர்.
+												</p>
+												
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir even flt_71">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/2.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">திருச்செங்கோட்டில் ₹90 லட்சம் மதிப்பிலான புதிய கால்நடை மருத்துவமனை திறப்பு</a>
+												</h4>
+												<p>
+													மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் திறந்து வைத்தனர்.
+												</p>
+												
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir odd flt_64">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/3.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">ஆலாம்பாளையம் கொங்கு திருப்பதி கோயில் திறப்பு</a>
+												</h4>
+												<p>
+                                                  K.S.மூர்த்தி, K.E.பிரகாஷ் ஆகியோர் ஆலாம்பாளையம் அருள்மிகு கொங்கு திருப்பதி திருக்கோயிலை பக்தர்கள் வழிபாட்டிற்கு திறந்து வைத்து வழிபட்டனர்.
+												</p>
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir even flt_71">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/4.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">நாமக்கல் மேற்கு மாவட்டத்தில் தூய்மைப் பணியாளர்கள் நலவாரிய தலைவர் வருகை</a>
+												</h4>
+												<p>
+                                                  டாக்டர் வெ.ஆறுமுகசாமி அவர்களை நாமக்கல் மேற்கு மாவட்ட கழக நிர்வாகிகள் வரவேற்றனர்.
+												</p>
+												
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir odd flt_66 flt_61">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/5.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
+												</h4>
+												<p>
+													K.S.மூர்த்தி தலைமையில், வீரமணி சிறப்புரையாற்ற SIR வாக்காளர் பட்டியல் திருத்தம் குறித்து ஆலோசனை.
+												</p>
+												
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir even flt_64">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/6.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
+												</h4>
+												<p>
+													K.S.மூர்த்தி தலைமையில், வீரமணி சிறப்புரையாற்ற SIR வாக்காளர் பட்டியல் திருத்தம் குறித்து ஆலோசனை.
+												</p>
+								
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir odd flt_64">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/7.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">புதிய ஒன்றிய பொறுப்பாளர்கள் K.S.மூர்த்தியை சந்தித்து வாழ்த்து</a>
+												</h4>
+												<p>
+													நாமக்கல் மேற்கு மாவட்டத்தில் தலைமைக் கழகத்தால் நியமிக்கப்பட்ட புதிய ஒன்றிய பொறுப்பாளர்கள் திரு.K.S.மூர்த்தி Ex.MLA அவர்களை சந்தித்து வாழ்த்து பெற்றனர்.
+												</p>
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir even flt_64">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/8.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">K.S.மூர்த்தி SIR படிவம் சமர்ப்பிப்பு</a>
+												</h4>
+												<p>
+													நாமக்கல் மேற்கு மாவட்ட பொறுப்பாளர் திரு.K.S.மூர்த்தி Ex.MLA அவர்கள் தனது SIR படிவத்தை பூர்த்தி செய்து சமர்ப்பித்தார்.
+												</p>
+												
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir odd flt_66">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/9.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">நாமக்கல்லில் 72வது அனைத்திந்திய கூட்டுறவு வார விழா</a>
+												</h4>
+												<p>
+													ஆதிதிராவிடர் நலத்துறை அமைச்சர் மா.மதிவேந்தன் அவர்கள் கூட்டுறவு வங்கி தலைவர் K.R.N.ராஜேஷ்குமார் உடன் நலத்திட்ட உதவிகளை வழங்கினார்.
+												</p>
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir even flt_65 flt_69">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/11.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">திருச்செங்கோட்டில் ₹90 லட்சம் புதிய கால்நடை மருத்துவமனை திறப்பு</a>
+												</h4>
+												<p>
+													மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் திறந்து வைத்தனர்.
+												</p>
+												
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir odd flt_64">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/12.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">எலச்சிபாளையத்தில் ₹34.50 லட்சம் புதிய வகுப்பறை கட்டிடம் திறப்பு</a>
+												</h4>
+												<p>
+													அமைச்சர் மா.மதிவேந்தன், K.S.மூர்த்தி ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் திறந்து வைத்தனர்.
+												</p>
+											</div>
+										</div>
+									</div>
+								</article>
+								<article class="isotopeElement post_format_standard hover_Dir even last flt_68">
+									<div class="hover hoverDirShow">
+										<div class="thumb">
+											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/13.jpg"></a>
+										</div>
+										<div class="folioShowBlock">
+											<div class="folioContentAfter">
+												<h4>
+													<a href="portfolio-post-standard.html">நாமக்கல்லில் 25 மாற்றுத்திறனாளிகளுக்கு ₹24 லட்சம் இருசக்கர வாகனங்கள் வழங்கல்</a>
+												</h4>
+												<p>
+													மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் வழங்கினர்.
+												</p>
+												
+											</div>
+										</div>
+									</div>
+								</article>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Gallery Content -->
+
+			<!-- Footer -->
+            <div class="footerContentWrap">
+				<!-- Footer Widgets -->
+                <!-- Footer -->
+            <div class="footerContentWrap">
+                <footer class="footerWrap footerStyleDark">
+					<!-- Footer widget area -->
+                    <div class="main footerWidget widget_area">
+                        <div class="columnsWrap">
+							<!-- Widget advert -->
+                            <aside class="columns1_4 widgetWrap widget widget_advert">
+                                <div class="widget_advert_inner">
+                                    <figure class="sc_image sc_image_shape_square width_150">
+										<img src="images/logos/Dravida_Munnetra_Kazhagam_logo.png" alt="" />
+									</figure>
+                                    <br />
+                                    <img alt="" src="http://placehold.it/550x367">
+                                    <br /> <span class="sc_icon icon-home theme_accent"></span> 378 Main Street London England
+                                    <br /> <span class="sc_icon icon-email theme_accent"></span> info@themerex.net
+                                    <br /> <span class="sc_icon icon-phone theme_accent"></span> +1 (44) 123-45-67
+								</div>
+                            </aside>
+							<!-- /Widget advert -->
+							<!-- Quick Links -->
+                            <aside class="columns1_4 widgetWrap widget widget_nav_menu">
+                                <h3 class="title">விரைவு இணைப்புகள்</h3>
+                                <ul class="menu">
+                                    <li><a href="index.html">முகப்பு</a></li>
+                                    <li><a href="contact-us.html">அறிமுகம்</a></li>
+                                    <li><a href="contact-us.html">சாதனைகள்</a></li>
+									<li><a href="contact-us.html">செய்திகள்</a></li>
+                                </ul>
+                            </aside>
+							<!-- /Quick Links -->
+							<!-- Services -->
+                            <aside class="columns1_4 widgetWrap widget widget_nav_menu">
+                                <h3 class="title">கேலரி</h3>
+                                <ul class="menu">
+                                    <li><a href="#">வீடியோக்கள்</a></li>
+                                    <li><a href="#">புகைப்படத் தொகுப்பு</a></li>
+
+                                </ul>
+                            </aside>
+							<!-- /Services -->
+							<!-- Resources -->
+                            <aside class="columns1_4 widgetWrap widget widget_nav_menu">
+                                <h3 class="title">தொடர்பு கொள்க</h3>
+                                <ul class="menu">
+                                    <li><a href="#">தொடர்பு கொள்க</a></li>
+                                </ul>
+                            </aside>
+							<!-- /Resources -->
+
+
+                        </div>
+                    </div>
+					<!-- /Footer widget area -->
+                </footer>
+                <!-- /Footer Widgets -->
+				<!-- Copyright area -->
+                <div class="copyWrap" style="background-color: #2C2C2C;">
+                    <div class="copy main">
+                        <div class="copyright">
+							<a href="#">பதிப்புரிமை © 2025. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</a>
+                            
+                        </div>
+                        <div >
+                            <ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: 15px;">
+                               <li>
+									<a target="_blank" href="https://www.facebook.com/share/1JyUued43z/"><span class="icon-facebook-1" style="font-size: 20px;"></span></a>
+								</li>
+                               <li>
+									<a target="_blank" href="https://www.instagram.com/ksmoorthiymla?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><span class="icon-instagram" style="font-size: 20px;"></span></a>
+								</li>
+                                <li>
+									<a target="_blank" href="https://www.twitter.com"><span class="icon-twitter-1" style="font-size: 20px;"></span></a>
+								</li>
+                                <li>
+									<a target="_blank" href="https://www.youtube.com"><span class="icon-youtube-play" style="font-size: 20px;"></span></a>
+								</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+				<!-- /Copyright area -->
+            </div>
+        </div>
+    </div>
+	<!-- /Main Content -->
+    <div class="upToScroll">
+        <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"></a>
+        <a href="#" class="scrollToTop icon-up-open-big" title="Back to top"></a>
+    </div>
+    <div class="customHtmlSection"></div>
+
+	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="js/_packed.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/_utils.js"></script>
+    <script type="text/javascript" src="js/_front.js"></script>
+	<script type="text/javascript" src="js/shortcodes/shortcodes_init.js"></script>
+
+	<script type="text/javascript" src="js/superfish.min.js"></script>
+	<script type="text/javascript" src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="js/swiper/idangerous.swiper-2.7.min.js"></script>
+    <script type="text/javascript" src="js/swiper/idangerous.swiper.scrollbar-2.4.min.js"></script>
+    <script type="text/javascript" src="js/flexslider/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="js/royalslider/jquery.royalslider.min.js"></script>
+	<script type="text/javascript" src="js/rs-plugin/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="js/rs-plugin/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="js/slider_init.js"></script>
+
+    <script type="text/javascript" src="js/SmoothScroll.min.js"></script>
+    <script type="text/javascript" src="js/hover/jquery.hoverdir.min.js"></script>
+    <script type="text/javascript" src="js/hover/hoverIntent.min.js"></script>
+    <script type="text/javascript" src="js/messages/_messages.min.js"></script>
+    <script type="text/javascript" src="js/diagram/chart.min.js"></script>
+    <script type="text/javascript" src="js/diagram/diagram.raphael.min.js"></script>
+
+    <script type="text/javascript" src="js/isotope/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/prettyphoto/jquery.prettyPhoto.min.js"></script>
+
+	<!-- <script type="text/javascript" src="js/_customizer.js"></script> -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+	<script>
+		// Initialize AOS
+		AOS.init({
+			duration: 800,
+			easing: 'ease-in-out',
+			once: true
+		});
+
+
+
+			// Line-by-line reveal animation on scroll
+			const revealElements = document.querySelectorAll('.reveal-line');
+
+			function checkReveal() {
+				const windowHeight = window.innerHeight;
+				const revealPoint = 150;
+
+				revealElements.forEach(function(element) {
+					const revealTop = element.getBoundingClientRect().top;
+
+					if (revealTop < windowHeight - revealPoint) {
+						element.classList.add('revealed');
+					}
+				});
+			}
+
+			// Check on load
+			checkReveal();
+
+			// Check on scroll
+			window.addEventListener('scroll', checkReveal);
+
+			// Modern button click effect - black background on touch/click
+			const buttons = document.querySelectorAll('.theme_button');
+
+			buttons.forEach(button => {
+				button.addEventListener('mousedown', function() {
+					this.style.backgroundColor = '#000000';
+					this.style.color = '#ffffff';
+					this.style.transition = 'all 0.1s ease';
+				});
+
+				button.addEventListener('mouseup', function() {
+					setTimeout(() => {
+						this.style.backgroundColor = '';
+						this.style.color = '';
+					}, 150);
+				});
+
+				button.addEventListener('mouseleave', function() {
+					this.style.backgroundColor = '';
+					this.style.color = '';
+				});
+
+				// Touch events for mobile
+				button.addEventListener('touchstart', function() {
+					this.style.backgroundColor = '#000000';
+					this.style.color = '#ffffff';
+					this.style.transition = 'all 0.1s ease';
+				});
+
+				button.addEventListener('touchend', function() {
+					setTimeout(() => {
+						this.style.backgroundColor = '';
+						this.style.color = '';
+					}, 150);
+				});
+			});
+	</script>
+
+</body>
+
+</html>
