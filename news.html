@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <title>கே.எஸ்.மூர்த்தி | செய்திகள்</title>
+   <title data-translate="newsPageTitle">கே.எஸ்.மூர்த்தி | செய்திகள்</title>
     <link rel="icon" type="image/x-icon" href="images/logos/footer1.png" />
     <!--[if lt IE 9]>
 		<script src="js/html5.min.js" type="text/javascript"></script>
@@ -40,6 +40,8 @@
 	<link rel="stylesheet" href="css/custom-styles.css" type="text/css" media="all" />
 	
     <link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+	<!-- Translation Toggle CSS -->
+	<link rel="stylesheet" href="css/translation-toggle.css" type="text/css" media="all" />
 	<style id="theme-skin-inline-css" type="text/css">
         	/* Fix navbar logo positioning on scroll */
 		header.fixedTopMenu .logo a span[style*="margin-top: 17px"] {
@@ -107,7 +109,7 @@
                                     </li>
                                 </ul>
                             </div>-->
-                            <div class="menuUsItem menuItemLeft">தொடர்பு கொள்க on 0800 123 4567 அல்லது <a href="#">support@themerex.net</a></div>
+                            <div class="menuUsItem menuItemLeft"><span data-translate="headerContact">தொடர்பு கொள்க on 0800 123 4567 அல்லது</span> <a href="#">support@themerex.net</a></div>
                         </div>
                     </div>
 					<!-- /User menu -->
@@ -116,7 +118,7 @@
 							<div class="main">
 								<div class="logo logo_left">
 									<a href="index.html">
-										<span style="display: block; margin-top: 17px; font-size: 70%;">கே.எஸ்.மூர்த்தி</span>
+										<span style="display: block; margin-top: 17px; font-size: 70%;" data-translate="politicianName">கே.எஸ்.மூர்த்தி</span>
 										<!--<span class="logo_slogan">Experience. Commitment. Impact.</span>-->
 									</a>
 								</div>
@@ -129,43 +131,43 @@
 										<!-- Homepage layouts -->
 										<li class="menu-item thumb_title custom_view_item">
 											<a title="முகப்பு" href="index.html">
-												<span class="menu_icon icon-home"></span>முகப்பு
+												<span class="menu_icon icon-home"></span><span data-translate="navHome">முகப்பு</span>
 											</a>
 										</li>
 										<li class="menu-item thumb_title custom_view_item">
 											<a title="அறிமுகம்" href="about-us.html">
-												<span class="menu_icon icon-user"></span>அறிமுகம்
+												<span class="menu_icon icon-user"></span><span data-translate="navAbout">அறிமுகம்</span>
 											</a>
 										</li>
 										<li class="menu-item thumb_title custom_view_item">
 											<a title="சாதனைகள்" href="achievements.html">
-												<span class="menu_icon icon-trophy"></span>சாதனைகள்
+												<span class="menu_icon icon-trophy"></span><span data-translate="navAchievements">சாதனைகள்</span>
 											</a>
 										</li>
 										<li class="menu-item thumb_title custom_view_item">
 											<a title="செய்திகள்" href="news.html">
-												<span class="menu_icon icon-doc"></span>செய்திகள்
+												<span class="menu_icon icon-doc"></span><span data-translate="navNews">செய்திகள்</span>
 											</a>
 										</li>
 
                                         <li class="menu-item menu-item-has-children">
 											<a title="கேலரி" href="#">
-												<span class="menu_icon icon-camera"></span>கேலரி
+												<span class="menu_icon icon-camera"></span><span data-translate="navGallery">கேலரி</span>
 											</a>
 											<ul class="sub-menu">
 
 												<li class="menu-item">
-													<a href="videos.html">வீடியோக்கள்</a>
+													<a href="videos.html"><span data-translate="navVideos">வீடியோக்கள்</span></a>
 												</li>
 												<li class="menu-item">
-													<a href="gallery.html">புகைப்படத் தொகுப்பு</a>
+													<a href="gallery.html"><span data-translate="navPhotos">புகைப்படத் தொகுப்பு</span></a>
 												</li>
 
 											</ul>
 										</li>
 										<li class="menu-item thumb_title custom_view_item">
 											<a title="தொடர்பு கொள்க" href="contact-us.html">
-												<span class="menu_icon icon-phone"></span>தொடர்பு கொள்க
+												<span class="menu_icon icon-phone"></span><span data-translate="navContact">தொடர்பு கொள்க</span>
 											</a>
 										</li>
 									</ul>
@@ -181,11 +183,11 @@
             <div id="topOfPage" class="topTabsWrap">
                 <div class="main">
                     <div class="speedBar">
-                        <a class="home" href="index.html">முகப்பு</a>
+                        <a class="home" href="index.html" data-translate="breadcrumbHome">முகப்பு</a>
 						<span class="breadcrumbs_delimiter"> / </span>
-						<span class="current">செய்திகள்</span> 
+						<span class="current" data-translate="breadcrumbCurrent">செய்திகள்</span>
 					</div>
-                    <h3 class="pageTitle h3">செய்திகள்</h3>
+                    <h3 class="pageTitle h3" data-translate="newsTitle">செய்திகள்</h3>
                 </div>
             </div>
 			<!-- /Page title -->
@@ -202,12 +204,12 @@
 											<img alt="" src="images/gallery/1.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">நாமக்கல்லில் நடமாடும் காய்கறி விற்பனை வண்டி வழங்கல்</a>
+											<a href="news-details.html" data-translate="newsTitle1">நாமக்கல்லில் நடமாடும் காய்கறி விற்பனை வண்டி வழங்கல்</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc1">
                                             அமைச்சர் மா.மதிவேந்தன், K.S.மூர்த்தி, எம்.பி. V.S.மாதேஸ்வரன் ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் பயனாளிகளுக்கு நடமாடும் காய்கறி வண்டியை வழங்கினர்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -221,12 +223,12 @@
 											<img alt="" src="images/gallery/2.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">திருச்செங்கோட்டில் ₹90 லட்சம் மதிப்பிலான புதிய கால்நடை மருத்துவமனை திறப்பு</a>
+											<a href="news-details.html" data-translate="newsTitle2">திருச்செங்கோட்டில் ₹90 லட்சம் மதிப்பிலான புதிய கால்நடை மருத்துவமனை திறப்பு</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc2">
                                             மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் திறந்து வைத்தனர்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -240,12 +242,12 @@
 											<img alt="" src="images/gallery/3.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">ஆலாம்பாளையம் கொங்கு திருப்பதி கோயில் திறப்பு</a>
+											<a href="news-details.html" data-translate="newsTitle3">ஆலாம்பாளையம் கொங்கு திருப்பதி கோயில் திறப்பு</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc3">
                                             K.S.மூர்த்தி, K.E.பிரகாஷ் ஆகியோர் ஆலாம்பாளையம் அருள்மிகு கொங்கு திருப்பதி திருக்கோயிலை பக்தர்கள் வழிபாட்டிற்கு திறந்து வைத்து வழிபட்டனர்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -259,12 +261,12 @@
 											<img alt="" src="images/gallery/4.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">நாமக்கல் மேற்கு மாவட்டத்தில் தூய்மைப் பணியாளர்கள் நலவாரிய தலைவர் வருகை</a>
+											<a href="news-details.html" data-translate="newsTitle4">நாமக்கல் மேற்கு மாவட்டத்தில் தூய்மைப் பணியாளர்கள் நலவாரிய தலைவர் வருகை</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc4">
                                             டாக்டர் வெ.ஆறுமுகசாமி அவர்களை நாமக்கல் மேற்கு மாவட்ட கழக நிர்வாகிகள் வரவேற்றனர்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -278,12 +280,12 @@
 											<img alt="" src="images/gallery/5.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
+											<a href="news-details.html" data-translate="newsTitle5">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc5">
                                             K.S.மூர்த்தி தலைமையில், வீரமணி சிறப்புரையாற்ற SIR வாக்காளர் பட்டியல் திருத்தம் குறித்து ஆலோசனை.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -297,12 +299,12 @@
 											<img alt="" src="images/gallery/6.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
+											<a href="news-details.html" data-translate="newsTitle6">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc6">
                                             K.S.மூர்த்தி தலைமையில், வீரமணி சிறப்புரையாற்ற SIR வாக்காளர் பட்டியல் திருத்தம் குறித்து ஆலோசனை.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -316,12 +318,12 @@
 											<img alt="" src="images/gallery/7.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">புதிய ஒன்றிய பொறுப்பாளர்கள் K.S.மூர்த்தியை சந்தித்து வாழ்த்து</a>
+											<a href="news-details.html" data-translate="newsTitle7">புதிய ஒன்றிய பொறுப்பாளர்கள் K.S.மூர்த்தியை சந்தித்து வாழ்த்து</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc7">
                                             நாமக்கல் மேற்கு மாவட்டத்தில் தலைமைக் கழகத்தால் நியமிக்கப்பட்ட புதிய ஒன்றிய பொறுப்பாளர்கள் திரு.K.S.மூர்த்தி Ex.MLA அவர்களை சந்தித்து வாழ்த்து பெற்றனர்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -335,12 +337,12 @@
 											<img alt="" src="images/gallery/8.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">K.S.மூர்த்தி SIR படிவம் சமர்ப்பிப்பு</a>
+											<a href="news-details.html" data-translate="newsTitle8">K.S.மூர்த்தி SIR படிவம் சமர்ப்பிப்பு</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc8">
                                             நாமக்கல் மேற்கு மாவட்ட பொறுப்பாளர் திரு.K.S.மூர்த்தி Ex.MLA அவர்கள் தனது SIR படிவத்தை பூர்த்தி செய்து சமர்ப்பித்தார்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -354,12 +356,12 @@
 											<img alt="" src="images/gallery/9.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">நாமக்கல்லில் 72வது அனைத்திந்திய கூட்டுறவு வார விழா</a>
+											<a href="news-details.html" data-translate="newsTitle9">நாமக்கல்லில் 72வது அனைத்திந்திய கூட்டுறவு வார விழா</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc9">
 											ஆதிதிராவிடர் நலத்துறை அமைச்சர் மா.மதிவேந்தன் அவர்கள் கூட்டுறவு வங்கி தலைவர் K.R.N.ராஜேஷ்குமார் உடன் நலத்திட்ட உதவிகளை வழங்கினார்.
                                         </p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -373,12 +375,12 @@
 											<img alt="" src="images/gallery/11.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">திருச்செங்கோட்டில் ₹90 லட்சம் புதிய கால்நடை மருத்துவமனை திறப்பு</a>
+											<a href="news-details.html" data-translate="newsTitle10">திருச்செங்கோட்டில் ₹90 லட்சம் புதிய கால்நடை மருத்துவமனை திறப்பு</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc10">
                                             மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் திறந்து வைத்தனர்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -392,12 +394,12 @@
 											<img alt="" src="images/gallery/12.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">எலச்சிபாளையத்தில் ₹34.50 லட்சம் புதிய வகுப்பறை கட்டிடம் திறப்பு</a>
+											<a href="news-details.html" data-translate="newsTitle11">எலச்சிபாளையத்தில் ₹34.50 லட்சம் புதிய வகுப்பறை கட்டிடம் திறப்பு</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc11">
                                             அமைச்சர் மா.மதிவேந்தன், K.S.மூர்த்தி ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் திறந்து வைத்தனர்.
                                         </p>
-                                        <div class="masonryInfo">Posted <a href="#" class="post_date">November 25, 2025</a></div>
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span> <a href="#" class="post_date">November 25, 2025</a></div>
                                        <!--<span class="inlineShadow"></span>-->
                                     </div>
                                 </article>
@@ -409,12 +411,12 @@
 											<img alt="" src="images/gallery/13.jpg">
 										</div>
                                         <h4>
-											<a href="news-details.html">நாமக்கல்லில் 25 மாற்றுத்திறனாளிகளுக்கு ₹24 லட்சம் இருசக்கர வாகனங்கள் வழங்கல்</a>
+											<a href="news-details.html" data-translate="newsTitle12">நாமக்கல்லில் 25 மாற்றுத்திறனாளிகளுக்கு ₹24 லட்சம் இருசக்கர வாகனங்கள் வழங்கல்</a>
 										</h4>
-                                        <p>
+                                        <p data-translate="newsDesc12">
                                             மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் வழங்கினர்.
 										</p>
-                                        <div class="masonryInfo">Posted
+                                        <div class="masonryInfo"><span data-translate="postedText">Posted</span>
 											<a href="#" class="post_date">November 25, 2025</a>
 										</div>
                                         <!--<span class="inlineShadow"></span>-->
@@ -457,10 +459,10 @@
 									</div>
                                 </li>
                                 <li class="pager_next ico right squareButton light">
-									<a href="#">Next </a>
+									<a href="#" data-translate="paginationNext">Next </a>
 								</li>
                                 <li class="pager_last ico right squareButton light">
-									<a href="#">Last </a>
+									<a href="#" data-translate="paginationLast">Last </a>
 								</li>
                             </ul>
                         </div>
@@ -492,30 +494,30 @@
 							<!-- /Widget advert -->
 							<!-- Quick Links -->
                             <aside class="columns1_4 widgetWrap widget widget_nav_menu">
-                                <h3 class="title">விரைவு இணைப்புகள்</h3>
+                                <h3 class="title" data-translate="footerQuickLinks">விரைவு இணைப்புகள்</h3>
                                 <ul class="menu">
-                                    <li><a href="index.html">முகப்பு</a></li>
-                                    <li><a href="contact-us.html">அறிமுகம்</a></li>
-                                    <li><a href="contact-us.html">சாதனைகள்</a></li>
-									<li><a href="contact-us.html">செய்திகள்</a></li>
+                                    <li><a href="index.html" data-translate="navHome">முகப்பு</a></li>
+                                    <li><a href="contact-us.html" data-translate="navAbout">அறிமுகம்</a></li>
+                                    <li><a href="contact-us.html" data-translate="navAchievements">சாதனைகள்</a></li>
+									<li><a href="contact-us.html" data-translate="navNews">செய்திகள்</a></li>
                                 </ul>
                             </aside>
 							<!-- /Quick Links -->
 							<!-- Services -->
                             <aside class="columns1_4 widgetWrap widget widget_nav_menu">
-                                <h3 class="title">கேலரி</h3>
+                                <h3 class="title" data-translate="footerGallery">கேலரி</h3>
                                 <ul class="menu">
-                                    <li><a href="#">வீடியோக்கள்</a></li>
-                                    <li><a href="#">புகைப்படத் தொகுப்பு</a></li>
-                                   
+                                    <li><a href="#" data-translate="navVideos">வீடியோக்கள்</a></li>
+                                    <li><a href="#" data-translate="navPhotos">புகைப்படத் தொகுப்பு</a></li>
+
                                 </ul>
                             </aside>
 							<!-- /Services -->
 							<!-- Resources -->
                             <aside class="columns1_4 widgetWrap widget widget_nav_menu">
-                                <h3 class="title">தொடர்பு கொள்க</h3>
+                                <h3 class="title" data-translate="footerContact">தொடர்பு கொள்க</h3>
                                 <ul class="menu">
-                                    <li><a href="#">தொடர்பு கொள்க</a></li>
+                                    <li><a href="#" data-translate="navContact">தொடர்பு கொள்க</a></li>
                                 </ul>
                             </aside>
 							<!-- /Resources -->
@@ -531,8 +533,8 @@
                 <div class="copyWrap" style="background-color: #2C2C2C;">
                     <div class="copy main">
                         <div class="copyright">
-							<a href="#">பதிப்புரிமை © 2025. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</a>
-                            
+							<a href="#" data-translate="copyright">பதிப்புரிமை © 2025. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</a>
+
                         </div>
                         <div >
                             <ul style="display: flex; list-style: none; padding: 0; margin: 0; gap: 15px;">
@@ -593,6 +595,9 @@
     <script type="text/javascript" src="js/prettyphoto/jquery.prettyPhoto.min.js"></script>
 	
 	<!-- <script type="text/javascript" src="js/_customizer.js"></script> -->
+
+	<!-- Translation Toggle Script -->
+	<script type="text/javascript" src="js/translation-toggle.js"></script>
 
 </body>
 
