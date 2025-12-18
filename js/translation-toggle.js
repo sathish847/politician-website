@@ -591,8 +591,8 @@ class TranslationToggle {
 
             // Grievance Form Labels and Messages
             'grievanceFormTitle': {
-                tamil: 'குறை சேர்க்க',
-                english: 'Submit Grievance'
+                tamil: 'உங்கள் கோரிக்கையை பதிவு செய்யவும்',
+                english: 'Register Your Request'
             },
             'grievanceFormDesc1': {
                 tamil: 'உங்கள் குறைகளை இங்கே சமர்ப்பிக்கவும். எங்கள் மாவட்ட செயலாளர் உங்கள் பிரச்சனைகளுக்கு உடனடியாக தீர்வு காண உதவுவார்.',
