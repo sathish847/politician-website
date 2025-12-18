@@ -92,6 +92,10 @@ class TranslationToggle {
                 tamil: 'தொடர்பு கொள்க',
                 english: 'Contact'
             },
+            'navGrievance': {
+                tamil: 'மனக்குறை',
+                english: 'Grievance'
+            },
 
             // Footer
             'footerQuickLinks': {
@@ -561,6 +565,62 @@ class TranslationToggle {
             'galleryDetailsPara4': {
                 tamil: 'மாற்றுத்திறனாளிகள் நல வாரியத்தின் இந்தத் திட்டம், வெறும் பொருள் உதவி மட்டுமல்ல, அவர்களுக்கு சுயமரியாதையையும் சமத்துவத்தையும் வழங்கும் மாபெரும் சமூக நீதிப் புரட்சியாகும். நாமக்கல் மாவட்டம் இது போன்ற நலத்திட்டங்களில் தமிழகத்திற்கே முன்மாதிரியாகத் திகழ்கிறது. இந்த நிகழ்வு முடிந்த பின்னரும், பயனாளிகளின் முகத்தில் தெரிந்த புன்னகை, இந்தத் திட்டத்தைச் செயல்படுத்திய அனைவருக்கும் மிகப் பெரிய பரிசாக அமைந்தது. இனிவரும் காலங்களிலும் இது போன்ற திட்டங்கள் தொடர்ந்து நிறைவேற்றப்படும் என்று அமைச்சரும், மாவட்ட நிர்வாகமும் உறுதியளித்துள்ள நிலையில், நாமக்கல் மாற்றுத்திறனாளிகளின் வாழ்வில் புதிய ஒளி பரவத் தொடங்கியுள்ளது.',
                 english: 'This program of the Disabled Welfare Board is not just material help, but a great social justice revolution that makes them full members of society. Namakkal District stands as a model for Tamil Nadu in such welfare programs. Even after this event ended, the smile on the beneficiaries\' faces became the biggest reward for everyone who implemented this program. With the Minister and District Administration assuring that such programs will continue to be implemented in the future, a new light has begun to spread in the lives of Namakkal disabled people.'
+            },
+
+            // District Secretary Section Content
+            'districtSecretaryTitle': {
+                tamil: 'மக்களுடன் மாவட்ட செயலாளர்',
+                english: 'District Secretary with People'
+            },
+            'districtPara1': {
+                tamil: 'கே.எஸ்.மூர்த்தி அவர்கள் திராவிட முன்னேற்ற கழகத்தின் மாவட்ட செயலாளராக பணியாற்றி வருகிறார். இவர் மக்களின் நலன் கருதி பல்வேறு திட்டங்களை முன்னெடுத்து, மாவட்ட மக்களின் வளர்ச்சிக்கு கணிசமான பங்காற்றி வருகிறார்.',
+                english: 'K.S. Moorthi serves as the District Secretary of the Dravida Munnetra Kazhagam. He has implemented various programs for public welfare and has made significant contributions to the development of the district people.'
+            },
+            'districtPara2': {
+                tamil: 'மக்கள் பிரச்சனைகளுக்கு நேரடியாக சென்று தீர்வு காணும் அவரது அணுகுமுறை மிகவும் பாராட்டத்தக்கது. கட்சியின் கொள்கைகளை மக்களிடம் எடுத்துச் செல்லும் பணியில் மிகுந்த ஈடுபாடு கொண்டுள்ளார்.',
+                english: 'His approach of directly addressing public issues and finding solutions is highly commendable. He is deeply committed to taking the party\'s policies to the people.'
+            },
+            'districtPara3': {
+                tamil: 'கல்வி, சுகாதாரம், வேலைவாய்ப்பு மற்றும் உள்கட்டமைப்பு ஆகிய துறைகளில் அவர் மேற்கொள்ளும் முயற்சிகள் மாவட்ட மக்களின் வாழ்க்கைத் தரத்தை மேம்படுத்தியுள்ளன.',
+                english: 'His efforts in education, healthcare, employment, and infrastructure have improved the quality of life for district people.'
+            },
+            'submitGrievance': {
+                tamil: 'குறை சேர்க்க',
+                english: 'Submit Grievance'
+            },
+
+            // Grievance Form Labels and Messages
+            'grievanceFormTitle': {
+                tamil: 'குறை சேர்க்க',
+                english: 'Submit Grievance'
+            },
+            'grievanceFormDesc1': {
+                tamil: 'உங்கள் குறைகளை இங்கே சமர்ப்பிக்கவும். எங்கள் மாவட்ட செயலாளர் உங்கள் பிரச்சனைகளுக்கு உடனடியாக தீர்வு காண உதவுவார்.',
+                english: 'Submit your grievances here. Our District Secretary will help resolve your issues promptly.'
+            },
+            'grievanceFormDesc2': {
+                tamil: 'அனைத்து தகவல்களும் கட்டாயம் தேவை. உங்கள் தனியுரிமை பாதுகாக்கப்படும்.',
+                english: 'All information is required. Your privacy will be protected.'
+            },
+            'labelFullName': {
+                tamil: 'முழு பெயர் *',
+                english: 'Full Name *'
+            },
+            'labelEmail': {
+                tamil: 'மின்னஞ்சல் முகவரி *',
+                english: 'Email Address *'
+            },
+            'labelPhone': {
+                tamil: 'தொலைபேசி எண் *',
+                english: 'Phone Number *'
+            },
+            'labelMessage': {
+                tamil: 'உங்கள் குறை *',
+                english: 'Your Grievance *'
+            },
+            'submitGrievanceBtn': {
+                tamil: 'குறை சேர்க்க',
+                english: 'Submit Grievance'
             }
         };
 

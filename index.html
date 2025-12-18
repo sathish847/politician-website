@@ -313,6 +313,12 @@
 												<span class="menu_icon icon-doc"></span><span data-translate="navNews">செய்திகள்</span>
 											</a>
 										</li>
+										
+										<li class="menu-item thumb_title custom_view_item">
+											<a title="மனக்குறை" href="district-secretary.html">
+												<span class="menu_icon icon-users"></span><span data-translate="navGrievance">மனக்குறை</span>
+											</a>
+										</li>
 
                                         <li class="menu-item menu-item-has-children">
 											<a title="கேலரி" href="#">
@@ -511,6 +517,43 @@
 			</div>
 			<!-- /Political Journey Section -->
 
+			<!-- District Secretary Section -->
+			<div class="districtSecretarySection" style="background-color: #f8f9fa; padding: 100px 0; position: relative;">
+				<!-- Section Translation Toggle -->
+				<div class="section-translation-toggle" style="position: absolute; top: 20px; right: 20px; z-index: 10;">
+					<div class="translation-toggle-container">
+						<span class="language-label tamil-label active">தமிழ்</span>
+						<div class="toggle-switch" id="districtToggle">
+							<div class="toggle-slider"></div>
+						</div>
+						<span class="language-label english-label">EN</span>
+					</div>
+				</div>
+				<!-- /Section Translation Toggle -->
+
+				<div class="sc_content main">
+					<div class="columnsWrap sc_columns sc_columns_count_2">
+						<div class="columns1_2 sc_column_item sc_column_item_1 odd first">
+							<div class="district-image" style="text-align: center;">
+								<img src="images/about/600263543_122112193341111809_2667105552193160108_n.jpg" alt="District Secretary" style="max-width: 100%; height: 400px; border: none; border-radius: 15px;" data-aos="fade-up">
+							</div>
+						</div>
+						<div class="columns1_2 sc_column_item sc_column_item_2 even">
+							<h2 class="sc_title sc_title_regular text-left" style="margin-bottom: 30px;" data-translate="districtSecretaryTitle">மக்களுடன் மாவட்ட செயலாளர்</h2>
+							<div class="district-text">
+								<p class="reveal-line" data-translate="districtPara1">கே.எஸ்.மூர்த்தி அவர்கள் திராவிட முன்னேற்ற கழகத்தின் மாவட்ட செயலாளராக பணியாற்றி வருகிறார். இவர் மக்களின் நலன் கருதி பல்வேறு திட்டங்களை முன்னெடுத்து, மாவட்ட மக்களின் வளர்ச்சிக்கு கணிசமான பங்காற்றி வருகிறார்.</p>
+								<p class="reveal-line" data-translate="districtPara2">மக்கள் பிரச்சனைகளுக்கு நேரடியாக சென்று தீர்வு காணும் அவரது அணுகுமுறை மிகவும் பாராட்டத்தக்கது. கட்சியின் கொள்கைகளை மக்களிடம் எடுத்துச் செல்லும் பணியில் மிகுந்த ஈடுபாடு கொண்டுள்ளார்.</p>
+								<p class="reveal-line" data-translate="districtPara3">கல்வி, சுகாதாரம், வேலைவாய்ப்பு மற்றும் உள்கட்டமைப்பு ஆகிய துறைகளில் அவர் மேற்கொள்ளும் முயற்சிகள் மாவட்ட மக்களின் வாழ்க்கைத் தரத்தை மேம்படுத்தியுள்ளன.</p>
+								<div style="margin-top: 30px; text-align: left;">
+									<a href="district-secretary.html" class="theme_button theme_accent2_bgc" style="padding: 12px 24px; text-decoration: none; color: white; border-radius: 4px; display: inline-block;" data-aos="fade-up" data-aos-delay="200" data-translate="submitGrievance">குறை சேர்க்க</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /District Secretary Section -->
+
 			<!-- செய்திகள் section -->
 			<div class="sc_content main margin_top_5em_imp margin_bottom_5em_imp" style="background-color: white; padding: 60px 0;">
 				<h1 class="sc_title sc_title_regular text-center" data-translate="newsTitle">செய்திகள்</h1>
@@ -703,6 +746,57 @@
 			duration: 800,
 			easing: 'ease-in-out',
 			once: true
+		});
+
+		// Section-specific translation toggle for District Secretary section
+		document.addEventListener('DOMContentLoaded', function() {
+			const districtToggle = document.getElementById('districtToggle');
+			const districtSection = document.querySelector('.districtSecretarySection');
+			let districtLanguage = 'tamil';
+
+			if (districtToggle) {
+				districtToggle.addEventListener('click', function() {
+					districtLanguage = districtLanguage === 'tamil' ? 'english' : 'tamil';
+
+					// Update toggle UI
+					const tamilLabel = districtSection.querySelector('.tamil-label');
+					const englishLabel = districtSection.querySelector('.english-label');
+
+					districtToggle.classList.toggle('active');
+					tamilLabel.classList.toggle('active');
+					englishLabel.classList.toggle('active');
+
+					// Apply translations to district section only
+					const districtElements = districtSection.querySelectorAll('[data-translate]');
+					districtElements.forEach(element => {
+						element.classList.add('fade-out');
+					});
+
+					setTimeout(() => {
+						districtElements.forEach(element => {
+							const key = element.getAttribute('data-translate');
+							if (window.translationSystem && window.translationSystem.translations[key]) {
+								if (element.hasAttribute('placeholder')) {
+									element.setAttribute('placeholder', window.translationSystem.translations[key][districtLanguage]);
+								} else {
+									element.textContent = window.translationSystem.translations[key][districtLanguage];
+								}
+							}
+						});
+
+						districtElements.forEach(element => {
+							element.classList.remove('fade-out');
+							element.classList.add('fade-in');
+						});
+
+						setTimeout(() => {
+							districtElements.forEach(element => {
+								element.classList.remove('fade-in');
+							});
+						}, 300);
+					}, 150);
+				});
+			}
 		});
 
 		// Line-by-line reveal animation on scroll
