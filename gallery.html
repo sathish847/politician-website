@@ -42,6 +42,8 @@
 
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Translation Toggle CSS -->
 	<link rel="stylesheet" href="css/translation-toggle.css" type="text/css" media="all" />
 	<!-- Fix for CORS issues with external images -->
@@ -177,16 +179,121 @@
 			padding: 0 !important;
 		}
 
+		/* Mobile responsive gallery layout */
 		@media (max-width: 768px) {
 			.folio3col .isotopeElement {
 				width: calc(50% - 10px) !important;
+				margin: 5px !important;
+			}
+
+			.portfolio {
+				padding: 10px !important;
+				gap: 10px !important;
 			}
 		}
 
 		@media (max-width: 480px) {
 			.folio3col .isotopeElement {
 				width: 100% !important;
+				margin: 0 !important; /* Remove all margins for no gap */
 			}
+
+			.portfolio {
+				padding: 0 !important; /* Remove padding for no gap */
+				gap: 0 !important; /* Remove gap for no gap */
+			}
+		}
+
+		/* Ensure all gallery items are always visible */
+		.isotopeElement {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			position: relative !important;
+		}
+
+		/* Override any isotope filtering that might hide items */
+		.portfolio .isotopeElement {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+		}
+
+		/* Force all items to show in mobile */
+		@media (max-width: 768px) {
+			.portfolio .isotopeElement.hidden,
+			.portfolio .isotopeElement.isotope-hidden {
+				display: block !important;
+				visibility: visible !important;
+				opacity: 1 !important;
+			}
+		}
+
+		/* Fix image container height restrictions */
+		.portfolio .isotopeElement .thumb {
+			position: relative !important;
+			height: auto !important;
+			min-height: 200px !important;
+			max-height: 300px !important;
+			overflow: hidden !important;
+		}
+
+		.portfolio .isotopeElement .thumb img {
+			width: 100% !important;
+			height: 100% !important;
+			object-fit: cover !important;
+			display: block !important;
+		}
+
+		/* Ensure proper aspect ratio for gallery images */
+		@media (min-width: 769px) {
+			.portfolio .isotopeElement .thumb {
+				aspect-ratio: 4/3 !important;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.portfolio .isotopeElement .thumb {
+				aspect-ratio: 1/1 !important;
+				min-height: 150px !important;
+				max-height: 250px !important;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.portfolio .isotopeElement .thumb {
+				height: auto !important; /* Use auto height for mobile images */
+				min-height: auto !important;
+				max-height: none !important;
+				aspect-ratio: auto !important;
+			}
+		}
+
+		/* Ensure portfolio container allows unlimited rows */
+		.portfolioWrap {
+			overflow: visible !important;
+			height: auto !important;
+			min-height: auto !important;
+		}
+
+		.portfolio {
+			height: auto !important;
+			min-height: auto !important;
+			max-height: none !important;
+			overflow: visible !important;
+		}
+
+		/* Force all gallery items to be visible and in multiple rows */
+		.portfolio .isotopeElement {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			flex-shrink: 0 !important;
+		}
+
+		/* Debug: Add borders to see layout */
+		.portfolio .isotopeElement {
+			border: 1px solid rgba(255, 0, 0, 0.1) !important;
 		}
 	</style>
 
@@ -370,11 +477,11 @@
 									</figure>
                                     <br />
                                     <img alt="" src="http://placehold.it/550x367">
-                    <br />  <span class="sc_icon icon-home theme_accent"></span>
-                    <span data-translate="footerAddress">Namakkal West District DMK Party Office: Located near RVR Petrol Bunk Corner, Malai Suttri Road, Namakkal Rd, Tiruchengode - Salem Main Rd, Namakkal, Tamil Nadu 637205.</span>
+                    <br />  <span class="sc_icon icon-home theme_accent" style="font-size: 15px;"></span>
+                    <span  style="color: #758080;font-size: 15px;">Namakkal West District DMK Party Office: Located near RVR Petrol Bunk Corner, Malai Suttri Road, Namakkal Rd, Tiruchengode - Salem Main Rd, Namakkal, Tamil Nadu 637205.</span>
                     
-                                    <br /> <span class="sc_icon icon-email theme_accent"></span> namakkalwestdmkksm@gmail.com
-                                    <br /> <span class="sc_icon icon-phone theme_accent"></span> +1 (44) 123-45-67
+                                    <br /> <span class="sc_icon icon-email theme_accent" style="font-size: 15px;"></span> <span style="color: #758080;font-size: 15px;">namakkalwestdmkksm@gmail.com</span>
+                                    <br /> <span class="sc_icon icon-phone theme_accent" style="font-size: 15px;"></span> <span style="color: #758080;font-size: 15px;">+1 (44) 123-45-67</span>
 								</div>
                             </aside>
 							<!-- /Widget advert -->
@@ -597,9 +704,12 @@
 		class DynamicGallery {
 			constructor() {
 				this.galleryContainer = document.getElementById('galleryContainer');
+				this.paginationContainer = document.createElement('div');
 				this.apiUrl = 'https://k-s-moorthy-backend-hty8.vercel.app/api/gallery';
 				this.currentLanguage = localStorage.getItem('preferredLanguage') || 'tamil'; // Check saved preference
 				this.galleryData = [];
+				this.currentPage = 1;
+				this.itemsPerPage = 6; // 2x3 grid (2 rows, 3 columns)
 
 				this.init();
 			}
@@ -622,7 +732,14 @@
 					const data = await response.json();
 					console.log('Gallery data received:', data);
 					this.galleryData = data.gallery || [];
-					console.log('Gallery items:', this.galleryData.length);
+					console.log('Total gallery items received:', this.galleryData.length);
+					console.log('Gallery items details:', this.galleryData.map((item, index) => ({
+						index: index + 1,
+						title_en: item.title_en,
+						title_ta: item.title_ta,
+						image: item.image,
+						link: item.link
+					})));
 					this.renderGallery();
 				} catch (error) {
 					console.error('Error loading gallery data:', error);
@@ -667,11 +784,13 @@
 					return;
 				}
 
+				console.log('Rendering all gallery items:', this.galleryData.length);
+
 				const galleryHTML = this.galleryData.map((item, index) => {
 					const title = this.currentLanguage === 'english' ? (item.title_en || 'No Title') : (item.title_ta || 'தலைப்பு இல்லை');
 					const description = this.currentLanguage === 'english' ? (item.description_en || 'No Description') : (item.description_ta || 'விளக்கம் இல்லை');
 
-					console.log(`Rendering item ${index}:`, { title, description, image: item.image, link: item.link });
+					console.log(`Rendering item ${index + 1}:`, { title, description, image: item.image, link: item.link });
 
 					// Determine CSS classes for grid layout
 					let classes = 'isotopeElement post_format_standard hover_Dir';
@@ -686,7 +805,7 @@
 						<article class="${classes}">
 							<div class="hover hoverDirShow">
 								<div class="thumb">
-									<img alt="${title}" src="${item.image}" style="width: 100%; height: auto; object-fit: cover;" crossorigin="anonymous" onload="console.log('Image loaded successfully:', '${item.image}')" onerror="console.error('Image failed to load:', '${item.image}'); this.src='images/gallery/1.jpg';">
+									<img alt="${title}" src="${item.image}" crossorigin="anonymous" onload="console.log('Image loaded successfully:', '${item.image}')" onerror="console.error('Image failed to load:', '${item.image}'); this.src='images/gallery/1.jpg';">
 								</div>
 								<div class="folioShowBlock">
 									<div class="folioContentAfter">
@@ -704,24 +823,107 @@
 				}).join('');
 
 				this.galleryContainer.innerHTML = galleryHTML;
-				console.log('Gallery HTML inserted:', galleryHTML.substring(0, 200) + '...');
-				console.log('Gallery container after insertion:', this.galleryContainer);
+				console.log('Gallery HTML inserted with all items:', galleryHTML.substring(0, 200) + '...');
+
+				// Debug: Check how many articles were actually created
+				const articles = this.galleryContainer.querySelectorAll('article');
+				console.log('Number of article elements created:', articles.length);
+				console.log('Article elements:', articles);
+
+				// Check if any articles are hidden
+				articles.forEach((article, index) => {
+					const computedStyle = window.getComputedStyle(article);
+					const rect = article.getBoundingClientRect();
+					console.log(`Article ${index + 1} (${article.className}):`, {
+						display: computedStyle.display,
+						visibility: computedStyle.visibility,
+						opacity: computedStyle.opacity,
+						position: computedStyle.position,
+						width: computedStyle.width,
+						height: computedStyle.height,
+						boundingRect: {
+							width: rect.width,
+							height: rect.height,
+							top: rect.top,
+							left: rect.left
+						},
+						isVisible: rect.width > 0 && rect.height > 0 && rect.top >= 0
+					});
+
+					// Check if this is the problematic 7th item
+					if (index === 6) {
+						console.log('🎯 7th item detailed analysis:', {
+							classes: article.className,
+							innerHTML: article.innerHTML.substring(0, 100) + '...',
+							computedWidth: computedStyle.width,
+							computedHeight: computedStyle.height,
+							parentDisplay: window.getComputedStyle(article.parentElement).display,
+							parentFlexWrap: window.getComputedStyle(article.parentElement).flexWrap
+						});
+					}
+				});
 
 				// Re-initialize any gallery plugins if needed
 				this.initializeGalleryPlugins();
 			}
 
-			initializeGalleryPlugins() {
-				// Re-initialize isotope if available
-				if (typeof $.fn.isotope !== 'undefined') {
-					$('.portfolio').isotope({
-						itemSelector: '.isotopeElement',
-						layoutMode: 'masonry'
-					});
+			goToPage(page) {
+				const totalPages = Math.ceil(this.galleryData.length / this.itemsPerPage);
+				if (page >= 1 && page <= totalPages) {
+					this.currentPage = page;
+					this.renderGallery();
+					// Scroll to top of gallery
+					this.galleryContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
 				}
+			}
+
+			initializeGalleryPlugins() {
+				// Completely disable isotope for better control over item visibility
+				console.log('Using flexbox layout for all screen sizes to ensure all items are visible');
+
+				// Force flexbox layout for all screen sizes
+				this.forceFlexboxLayout();
 
 				// Initialize simple hover effects with CSS transitions
 				this.initializeHoverEffects();
+			}
+
+			forceFlexboxLayout() {
+				// Ensure portfolio uses flexbox and all items are visible
+				const portfolio = document.querySelector('.portfolio');
+				if (portfolio) {
+					portfolio.style.display = 'flex';
+					portfolio.style.flexWrap = 'wrap';
+					portfolio.style.gap = window.innerWidth <= 480 ? '0' : '10px'; // No gap for mobile
+					portfolio.style.padding = window.innerWidth <= 480 ? '0' : '10px'; // No padding for mobile
+
+					// Force all isotope elements to be visible
+					const items = portfolio.querySelectorAll('.isotopeElement');
+					items.forEach((item, index) => {
+						item.style.display = 'block';
+						item.style.visibility = 'visible';
+						item.style.opacity = '1';
+						item.style.position = 'relative';
+
+						// Set width based on screen size
+						if (window.innerWidth <= 480) {
+							item.style.width = '100%';
+							item.style.margin = '0'; // No margins for seamless display
+						} else if (window.innerWidth <= 768) {
+							item.style.width = 'calc(50% - 10px)';
+							item.style.margin = '5px';
+						} else {
+							item.style.width = 'calc(33.333% - 10px)';
+							item.style.margin = '5px';
+						}
+
+						console.log(`Forced visibility for item ${index + 1}:`, {
+							display: item.style.display,
+							visibility: item.style.visibility,
+							width: item.style.width
+						});
+					});
+				}
 			}
 
 			initializeHoverEffects() {
@@ -836,6 +1038,16 @@
 		// Initialize dynamic gallery when DOM is ready
 		document.addEventListener('DOMContentLoaded', function() {
 			new DynamicGallery();
+		});
+
+		// Re-apply layout on window resize
+		window.addEventListener('resize', function() {
+			const gallery = document.querySelector('.portfolio');
+			if (gallery && gallery.querySelectorAll('.isotopeElement').length > 0) {
+				console.log('Window resized, reapplying gallery layout');
+				const dynamicGallery = new DynamicGallery();
+				dynamicGallery.forceFlexboxLayout();
+			}
 		});
 	</script>
 
