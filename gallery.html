@@ -164,7 +164,6 @@
 		.portfolio {
 			display: flex !important;
 			flex-wrap: wrap !important;
-			gap: 20px !important;
 		}
 
 		.folio3col .isotopeElement {
@@ -715,10 +714,49 @@
 					});
 				}
 
-				// Re-initialize hover effects if available
-				if (typeof $.fn.hoverdir !== 'undefined') {
-					$('.hoverDirShow').hoverdir();
-				}
+				// Initialize simple hover effects with CSS transitions
+				this.initializeHoverEffects();
+			}
+
+			initializeHoverEffects() {
+				// Remove the display: none rule and replace with visibility-based approach
+				const style = document.createElement('style');
+				style.textContent = `
+					/* Override the original display: none rule */
+					.portfolio .isotopeElement .hoverDirShow .folioShowBlock {
+						display: block !important;
+						visibility: visible !important;
+						opacity: 0 !important;
+						transform: translateY(20px) !important;
+						transition: all 0.3s ease !important;
+						pointer-events: none !important;
+					}
+
+					.portfolio .isotopeElement:hover .hoverDirShow .folioShowBlock {
+						opacity: 1 !important;
+						transform: translateY(0) !important;
+						pointer-events: auto !important;
+					}
+				`;
+				document.head.appendChild(style);
+
+				// Also directly modify existing elements and remove any conflicting styles
+				setTimeout(() => {
+					const folioBlocks = document.querySelectorAll('.portfolio .isotopeElement .hoverDirShow .folioShowBlock');
+					folioBlocks.forEach(block => {
+						// Remove any existing display/visibility styles that might conflict
+						block.style.removeProperty('display');
+						block.style.removeProperty('visibility');
+
+						// Apply our styles
+						block.style.display = 'block';
+						block.style.visibility = 'visible';
+						block.style.opacity = '0';
+						block.style.transform = 'translateY(20px)';
+						block.style.transition = 'all 0.3s ease';
+						block.style.pointerEvents = 'none';
+					});
+				}, 100);
 			}
 
 			setupLanguageChangeListener() {
