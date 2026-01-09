@@ -44,6 +44,8 @@
 	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 	<!-- Translation Toggle CSS -->
 	<link rel="stylesheet" href="css/translation-toggle.css" type="text/css" media="all" />
+	<!-- Fix for CORS issues with external images -->
+	<meta http-equiv="Content-Security-Policy" content="img-src * data:;">
 	<style id="theme-skin-inline-css" type="text/css"></style>
 	<style id="theme-skin-inline-css" type="text/css">
 		/* Fix navbar logo positioning on scroll */
@@ -130,6 +132,56 @@
 		.theme_button:active {
 			transform: scale(1.02);
 			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+		}
+
+		/* Increase navbar height when fixed on scroll */
+		header.fixedTopMenu .topWrap {
+			min-height: 30px !important;
+			padding: 15px 0 !important;
+		}
+
+		header.fixedTopMenu .mainmenu_area .main {
+			padding: 10px 0 !important;
+		}
+
+		/* Adjust translation toggle position when navbar is fixed */
+		header.fixedTopMenu + .main_content + .upToScroll + .customHtmlSection + .translation-toggle-container,
+		.translation-toggle-container {
+			top: 100px;
+		}
+
+		header.fixedTopMenu ~ .translation-toggle-container {
+			top: 120px !important;
+		}
+
+		/* Debug: Make gallery items visible */
+		.isotopeElement {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+		}
+
+		.portfolio {
+			display: flex !important;
+			flex-wrap: wrap !important;
+			gap: 20px !important;
+		}
+
+		.folio3col .isotopeElement {
+			width: calc(33.333% - 20px) !important;
+			margin-bottom: 20px !important;
+		}
+
+		@media (max-width: 768px) {
+			.folio3col .isotopeElement {
+				width: calc(50% - 10px) !important;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.folio3col .isotopeElement {
+				width: 100% !important;
+			}
 		}
 	</style>
 
@@ -227,11 +279,11 @@
 												<span class="menu_icon icon-trophy"></span><span data-translate="navAchievements">சாதனைகள்</span>
 											</a>
 										</li>
-										<li class="menu-item thumb_title custom_view_item">
+											<!--	<li class="menu-item thumb_title custom_view_item">
 											<a title="செய்திகள்" href="news.html">
 												<span class="menu_icon icon-doc"></span><span data-translate="navNews">செய்திகள்</span>
 											</a>
-										</li>
+										</li>  -->
 										<li class="menu-item thumb_title custom_view_item">
 											<a title="மனக்குறை" href="district-secretary.html">
 												<span class="menu_icon icon-users"></span><span data-translate="navGrievance">மனக்குறை</span>
@@ -266,7 +318,7 @@
 						<!-- /Main menu -->
 					</div>
             </header>
-			<!-- Page title -->
+			<!-- Page title 
             <div id="topOfPage" class="topTabsWrap">
                 <div class="main">
                     <div class="speedBar">
@@ -277,7 +329,7 @@
                     <h3 class="pageTitle h3" data-translate="galleryTitle">கேலரி</h3>
                 </div>
             </div>
-			<!-- /Page title -->
+			 Page title -->
 
 
 
@@ -287,219 +339,8 @@
 					<div class="content">
 						<div class="portfolioWrap">
 							<!--<div id="grid-3-columns" class="isotopeFiltr"></div>-->
-							<section class="portfolio isotope folio3col" data-columns="3">
-								<article class="isotopeElement post_format_standard hover_Dir odd flt_71 flt_66 flt_61">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/1.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle1">நாமக்கல்லில் நடமாடும் காய்கறி விற்பனை வண்டி வழங்கல்</a>
-												</h4>
-												<p data-translate="newsDesc1">
-									              அமைச்சர் மா.மதிவேந்தன், K.S.மூர்த்தி, எம்.பி. V.S.மாதேஸ்வரன் ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் பயனாளிகளுக்கு நடமாடும் காய்கறி வண்டியை வழங்கினர்.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir even flt_71">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/2.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle2">திருச்செங்கோட்டில் ₹90 லட்சம் மதிப்பிலான புதிய கால்நடை மருத்துவமனை திறப்பு</a>
-												</h4>
-												<p data-translate="newsDesc2">
-													மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் திறந்து வைத்தனர்.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir odd flt_64">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/3.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle3">ஆலாம்பாளையம் கொங்கு திருப்பதி கோயில் திறப்பு</a>
-												</h4>
-												<p data-translate="newsDesc3">
-                                                  K.S.மூர்த்தி, K.E.பிரகாஷ் ஆகியோர் ஆலாம்பாளையம் அருள்மிகு கொங்கு திருப்பதி திருக்கோயிலை பக்தர்கள் வழிபாட்டிற்கு திறந்து வைத்து வழிபட்டனர்.
-												</p>
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir even flt_71">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/4.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle4">நாமக்கல் மேற்கு மாவட்டத்தில் தூய்மைப் பணியாளர்கள் நலவாரிய தலைவர் வருகை</a>
-												</h4>
-												<p data-translate="newsDesc4">
-                                                  டாக்டர் வெ.ஆறுமுகசாமி அவர்களை நாமக்கல் மேற்கு மாவட்ட கழக நிர்வாகிகள் வரவேற்றனர்.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir odd flt_66 flt_61">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/5.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle5">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
-												</h4>
-												<p data-translate="newsDesc5">
-													K.S.மூர்த்தி தலைமையில், வீரமணி சிறப்புரையாற்ற SIR வாக்காளர் பட்டியல் திருத்தம் குறித்து ஆலோசனை.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir even flt_64">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/6.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle6">நாமக்கல் மேற்கு மாவட்ட வழக்கறிஞர் அணி ஆலோசனைக் கூட்டம்</a>
-												</h4>
-												<p data-translate="newsDesc6">
-													K.S.மூர்த்தி தலைமையில், வீரமணி சிறப்புரையாற்ற SIR வாக்காளர் பட்டியல் திருத்தம் குறித்து ஆலோசனை.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir odd flt_64">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/7.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle7">புதிய ஒன்றிய பொறுப்பாளர்கள் K.S.மூர்த்தியை சந்தித்து வாழ்த்து</a>
-												</h4>
-												<p data-translate="newsDesc7">
-													நாமக்கல் மேற்கு மாவட்டத்தில் தலைமைக் கழகத்தால் நியமிக்கப்பட்ட புதிய ஒன்றிய பொறுப்பாளர்கள் திரு.K.S.மூர்த்தி Ex.MLA அவர்களை சந்தித்து வாழ்த்து பெற்றனர்.
-												</p>
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir even flt_64">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/8.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle8">K.S.மூர்த்தி SIR படிவம் சமர்ப்பிப்பு</a>
-												</h4>
-												<p data-translate="newsDesc8">
-													நாமக்கல் மேற்கு மாவட்ட பொறுப்பாளர் திரு.K.S.மூர்த்தி Ex.MLA அவர்கள் தனது SIR படிவத்தை பூர்த்தி செய்து சமர்ப்பித்தார்.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir odd flt_66">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/9.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle9">நாமக்கல்லில் 72வது அனைத்திந்திய கூட்டுறவு வார விழா</a>
-												</h4>
-												<p data-translate="newsDesc9">
-													ஆதிதிராவிடர் நலத்துறை அமைச்சர் மா.மதிவேந்தன் அவர்கள் கூட்டுறவு வங்கி தலைவர் K.R.N.ராஜேஷ்குமார் உடன் நலத்திட்ட உதவிகளை வழங்கினார்.
-												</p>
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir even flt_65 flt_69">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/11.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle10">திருச்செங்கோட்டில் ₹90 லட்சம் புதிய கால்நடை மருத்துவமனை திறப்பு</a>
-												</h4>
-												<p data-translate="newsDesc10">
-													மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் திறந்து வைத்தனர்.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir odd flt_64">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/12.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle11">எலச்சிபாளையத்தில் ₹34.50 லட்சம் புதிய வகுப்பறை கட்டிடம் திறப்பு</a>
-												</h4>
-												<p data-translate="newsDesc11">
-													அமைச்சர் மா.மதிவேந்தன், K.S.மூர்த்தி ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் திறந்து வைத்தனர்.
-												</p>
-											</div>
-										</div>
-									</div>
-								</article>
-								<article class="isotopeElement post_format_standard hover_Dir even last flt_68">
-									<div class="hover hoverDirShow">
-										<div class="thumb">
-											<a href="portfolio-post-standard.html"><img alt="" src="images/gallery/13.jpg"></a>
-										</div>
-										<div class="folioShowBlock">
-											<div class="folioContentAfter">
-												<h4>
-													<a href="portfolio-post-standard.html" data-translate="newsTitle12">நாமக்கல்லில் 25 மாற்றுத்திறனாளிகளுக்கு ₹24 லட்சம் இருசக்கர வாகனங்கள் வழங்கல்</a>
-												</h4>
-												<p data-translate="newsDesc12">
-													மா.மதிவேந்தன், K.S.மூர்த்தி, V.S.மாதேஸ்வரன் ஆகியோர் மாவட்ட ஆட்சியர் தலைமையில் வழங்கினர்.
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</article>
+							<section class="portfolio isotope folio3col" data-columns="3" id="galleryContainer">
+								<!-- Gallery items will be loaded dynamically -->
 							</section>
 						</div>
 					</div>
@@ -524,8 +365,10 @@
 									</figure>
                                     <br />
                                     <img alt="" src="http://placehold.it/550x367">
-                                    <br /> <span class="sc_icon icon-home theme_accent"></span> 378 Main Street London England
-                                    <br /> <span class="sc_icon icon-email theme_accent"></span> info@themerex.net
+                    <br />  <span class="sc_icon icon-home theme_accent"></span>
+                    <span data-translate="footerAddress">Namakkal West District DMK Party Office: Located near RVR Petrol Bunk Corner, Malai Suttri Road, Namakkal Rd, Tiruchengode - Salem Main Rd, Namakkal, Tamil Nadu 637205.</span>
+                    
+                                    <br /> <span class="sc_icon icon-email theme_accent"></span> namakkalwestdmkksm@gmail.com
                                     <br /> <span class="sc_icon icon-phone theme_accent"></span> +1 (44) 123-45-67
 								</div>
                             </aside>
@@ -537,7 +380,7 @@
                                     <li><a href="index.html" data-translate="navHome">முகப்பு</a></li>
                                     <li><a href="about-us.html" data-translate="navAbout">அறிமுகம்</a></li>
                                     <li><a href="achievements.html" data-translate="navAchievements">சாதனைகள்</a></li>
-									<li><a href="news.html" data-translate="navNews">செய்திகள்</a></li>
+									<!--<li><a href="news.html" data-translate="navNews">செய்திகள்</a></li>-->
                                 </ul>
                             </aside>
 							<!-- /Quick Links -->
@@ -570,7 +413,7 @@
                 <div class="copyWrap" style="background-color: #2C2C2C;">
                     <div class="copy main">
                         <div class="copyright">
-							<a href="#" data-translate="copyright">பதிப்புரிமை © 2025. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</a>
+							<a href="#" data-translate="copyright">பதிப்புரிமை © 2026. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</a>
 
                         </div>
                         <div >
@@ -700,10 +543,257 @@
 					}, 150);
 				});
 			});
+
+			// Adjust translation toggle position when navbar becomes fixed
+			function adjustTranslationToggle() {
+				const header = document.querySelector('header');
+				const translationToggle = document.querySelector('.translation-toggle-container');
+
+				if (header && translationToggle) {
+					if (header.classList.contains('fixedTopMenu')) {
+						translationToggle.style.top = '120px';
+					} else {
+						translationToggle.style.top = '100px';
+					}
+				}
+			}
+
+			// Check on scroll and DOM changes
+			window.addEventListener('scroll', adjustTranslationToggle);
+
+			// Use MutationObserver to watch for class changes on header
+			const observer = new MutationObserver(function(mutations) {
+				mutations.forEach(function(mutation) {
+					if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+						adjustTranslationToggle();
+					}
+				});
+			});
+
+			// Start observing when DOM is ready
+			document.addEventListener('DOMContentLoaded', function() {
+				const header = document.querySelector('header');
+				if (header) {
+					observer.observe(header, {
+						attributes: true,
+						attributeFilter: ['class']
+					});
+				}
+				// Initial check
+				setTimeout(adjustTranslationToggle, 100);
+			});
 	</script>
 
 	<!-- Translation Toggle Script -->
 	<script type="text/javascript" src="js/translation-toggle.js"></script>
+
+	<!-- Dynamic Gallery Script -->
+	<script>
+		class DynamicGallery {
+			constructor() {
+				this.galleryContainer = document.getElementById('galleryContainer');
+				this.apiUrl = 'https://k-s-moorthy-backend-hty8.vercel.app/api/gallery';
+				this.currentLanguage = localStorage.getItem('preferredLanguage') || 'tamil'; // Check saved preference
+				this.galleryData = [];
+
+				this.init();
+			}
+
+			init() {
+				this.loadGalleryData();
+				this.setupLanguageChangeListener();
+			}
+
+			async loadGalleryData() {
+				try {
+					this.showLoading();
+					console.log('Fetching gallery data from:', this.apiUrl);
+					const response = await fetch(this.apiUrl);
+
+					if (!response.ok) {
+						throw new Error(`HTTP error! status: ${response.status}`);
+					}
+
+					const data = await response.json();
+					console.log('Gallery data received:', data);
+					this.galleryData = data.gallery || [];
+					console.log('Gallery items:', this.galleryData.length);
+					this.renderGallery();
+				} catch (error) {
+					console.error('Error loading gallery data:', error);
+					this.showError('Failed to load gallery. Please check console for details.');
+				}
+			}
+
+			showLoading() {
+				const loadingText = window.TranslationToggle?.translations?.galleryLoading?.[this.currentLanguage] || 'Loading gallery...';
+				this.galleryContainer.innerHTML = `
+					<div class="loading-container" style="text-align: center; padding: 50px; grid-column: 1 / -1;">
+						<div style="display: inline-block; width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #E83737; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+						<p style="margin-top: 20px; color: #666;">${loadingText}</p>
+					</div>
+					<style>
+						@keyframes spin {
+							0% { transform: rotate(0deg); }
+							100% { transform: rotate(360deg); }
+						}
+					</style>
+				`;
+			}
+
+			showError(message) {
+				const retryText = window.TranslationToggle?.translations?.galleryRetry?.[this.currentLanguage] || 'Retry';
+				this.galleryContainer.innerHTML = `
+					<div class="error-container" style="text-align: center; padding: 50px; grid-column: 1 / -1;">
+						<p style="color: #E83737; font-size: 16px;">${message}</p>
+						<button onclick="window.location.reload()" style="margin-top: 20px; padding: 10px 20px; background: #E83737; color: white; border: none; border-radius: 5px; cursor: pointer;">${retryText}</button>
+					</div>
+				`;
+			}
+
+			renderGallery() {
+				if (!this.galleryData.length) {
+					const emptyText = window.TranslationToggle?.translations?.galleryEmpty?.[this.currentLanguage] || 'No gallery items available.';
+					this.galleryContainer.innerHTML = `
+						<div class="empty-container" style="text-align: center; padding: 50px; grid-column: 1 / -1;">
+							<p style="color: #666; font-size: 16px;">${emptyText}</p>
+						</div>
+					`;
+					return;
+				}
+
+				const galleryHTML = this.galleryData.map((item, index) => {
+					const title = this.currentLanguage === 'english' ? (item.title_en || 'No Title') : (item.title_ta || 'தலைப்பு இல்லை');
+					const description = this.currentLanguage === 'english' ? (item.description_en || 'No Description') : (item.description_ta || 'விளக்கம் இல்லை');
+
+					console.log(`Rendering item ${index}:`, { title, description, image: item.image, link: item.link });
+
+					// Determine CSS classes for grid layout
+					let classes = 'isotopeElement post_format_standard hover_Dir';
+					if (index % 3 === 0) classes += ' odd';
+					if (index % 3 === 1) classes += ' even';
+					if (index === this.galleryData.length - 1) classes += ' last';
+
+					// Add filter classes (you can customize these based on your needs)
+					classes += ` flt_${71 + (index % 4)}`;
+
+					return `
+						<article class="${classes}">
+							<div class="hover hoverDirShow">
+								<div class="thumb">
+									<img alt="${title}" src="${item.image}" style="width: 100%; height: auto; object-fit: cover;" crossorigin="anonymous" onload="console.log('Image loaded successfully:', '${item.image}')" onerror="console.error('Image failed to load:', '${item.image}'); this.src='images/gallery/1.jpg';">
+								</div>
+								<div class="folioShowBlock">
+									<div class="folioContentAfter">
+										<h4>
+											<a href="${item.link || '#'}" title="${title}" target="_blank" rel="noopener noreferrer" style="cursor: pointer; color: inherit; text-decoration: none;" onclick="console.log('Link clicked:', '${item.link || '#'}')">
+												${title}
+											</a>
+										</h4>
+										<p>${description}</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					`;
+				}).join('');
+
+				this.galleryContainer.innerHTML = galleryHTML;
+				console.log('Gallery HTML inserted:', galleryHTML.substring(0, 200) + '...');
+				console.log('Gallery container after insertion:', this.galleryContainer);
+
+				// Re-initialize any gallery plugins if needed
+				this.initializeGalleryPlugins();
+			}
+
+			initializeGalleryPlugins() {
+				// Re-initialize isotope if available
+				if (typeof $.fn.isotope !== 'undefined') {
+					$('.portfolio').isotope({
+						itemSelector: '.isotopeElement',
+						layoutMode: 'masonry'
+					});
+				}
+
+				// Re-initialize hover effects if available
+				if (typeof $.fn.hoverdir !== 'undefined') {
+					$('.hoverDirShow').hoverdir();
+				}
+			}
+
+			setupLanguageChangeListener() {
+				// Listen for language changes from the translation toggle
+				const checkLanguageAndUpdate = () => {
+					const savedLanguage = localStorage.getItem('preferredLanguage') || 'tamil';
+					if (savedLanguage !== this.currentLanguage) {
+						this.currentLanguage = savedLanguage;
+						console.log('Language changed to:', this.currentLanguage);
+						// Re-render the entire gallery with new language
+						if (this.galleryData.length > 0) {
+							this.renderGallery();
+						}
+					}
+				};
+
+				// Check language periodically (more reliable than trying to hook into prototype)
+				setInterval(checkLanguageAndUpdate, 300);
+
+				// Also listen for storage changes (in case language is changed in another tab)
+				window.addEventListener('storage', (e) => {
+					if (e.key === 'preferredLanguage') {
+						this.currentLanguage = e.newValue || 'tamil';
+						console.log('Language changed via storage to:', this.currentLanguage);
+						// Re-render the entire gallery with new language
+						if (this.galleryData.length > 0) {
+							this.renderGallery();
+						}
+					}
+				});
+
+				// Initial check
+				setTimeout(checkLanguageAndUpdate, 500);
+			}
+
+			updateGalleryTitles() {
+				console.log('Updating gallery titles to language:', this.currentLanguage);
+				const galleryItems = this.galleryContainer.querySelectorAll('.isotopeElement');
+
+				galleryItems.forEach((item, index) => {
+					if (this.galleryData[index]) {
+						const data = this.galleryData[index];
+						const title = this.currentLanguage === 'english' ? (data.title_en || 'No Title') : (data.title_ta || 'தலைப்பு இல்லை');
+						const description = this.currentLanguage === 'english' ? (data.description_en || 'No Description') : (data.description_ta || 'விளக்கம் இல்லை');
+
+						// Update title link text and attributes
+						const titleElement = item.querySelector('h4 a');
+						if (titleElement) {
+							titleElement.textContent = title;
+							titleElement.setAttribute('title', title); // For hover tooltip
+						}
+
+						// Update image alt attribute
+						const imgElement = item.querySelector('img');
+						if (imgElement) {
+							imgElement.setAttribute('alt', title);
+						}
+
+						// Update description
+						const descElement = item.querySelector('p');
+						if (descElement) {
+							descElement.textContent = description;
+						}
+
+						console.log(`Updated item ${index} title to:`, title);
+					}
+				});
+			}
+		}
+
+		// Initialize dynamic gallery when DOM is ready
+		document.addEventListener('DOMContentLoaded', function() {
+			new DynamicGallery();
+		});
+	</script>
 
 </body>
 
