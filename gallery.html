@@ -107,6 +107,8 @@
 		/* Gallery content spacing below navbar */
 		.gallery-content-spacing {
 			margin-top: 100px; /* Add space below the fixed navbar */
+			margin-bottom: 100px; /* Add space above footer to prevent overlap */
+			min-height: calc(100vh - 200px); /* Ensure minimum height */
 		}
 
 		.theme_button::before {
@@ -164,11 +166,15 @@
 		.portfolio {
 			display: flex !important;
 			flex-wrap: wrap !important;
+			gap: 0 0 !important; /* No gaps at all */
+			padding: 0 !important;
+			margin: 0 !important;
 		}
 
 		.folio3col .isotopeElement {
-			width: calc(33.333% - 20px) !important;
-			margin-bottom: 20px !important;
+			width: calc(33.333%) !important;
+			margin: 0 !important;
+			padding: 0 !important;
 		}
 
 		@media (max-width: 768px) {
