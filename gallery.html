@@ -50,6 +50,7 @@
 		header.fixedTopMenu .logo a span[style*="margin-top: 17px"] {
 			margin-top: 5px !important;
 		}
+		
 	</style>
 	<style>
 		/* Line-by-line reveal animation */
@@ -148,10 +149,15 @@
 			transform: scale(1.02);
 			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 		}
+
+		/* Set solid red background for navbar */
+		.top_panel_above .topWrap {
+			background-color: #EF3939 !important;
+		}
 	</style>
 
 </head>
-<body class="home page fullscreen top_panel_above">
+<body class="page wide top_panel_above">
     <a id="toc_home" class="sc_anchor" title="Home" data-description="<i>Return to Home</i> - <br>navigate to home page of the site" data-icon="icon-home" data-url="index.html" data-separator="yes"></a>
     <a id="toc_top" class="sc_anchor" title="To Top" data-description="<i>Back to top</i> - <br>scroll to top of the page" data-icon="icon-up" data-url="" data-separator="yes"></a>
     <!--[if lt IE 9]>
@@ -162,7 +168,6 @@
 	<!-- Main Content -->
     <div class="main_content">
         <div class="boxedWrap">
-            <div class="fullScreenSlider">
 				<header class="noFixMenu menu_right with_user_menu">
                 <div class="topWrapFixed"></div>
                 <div class="topWrap">
@@ -408,7 +413,6 @@
 				<!-- /Copyright area -->
             </div>
         </div>
-    </div>
 	<!-- /Main Content -->
     <div class="upToScroll">
         <a href="#" class="addBookmark icon-star-empty" title="Add the current page into bookmarks"></a>
