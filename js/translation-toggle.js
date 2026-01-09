@@ -658,6 +658,10 @@ class TranslationToggle {
         tamil: "கேலரி",
         english: "Gallery",
       },
+      galleryTitle: {
+        tamil: "கேலரி",
+        english: "Gallery",
+      },
       galleryDetailsArticleTitle: {
         tamil:
           '"புதிய சக்கரங்கள்… புதிய வாழ்க்கை!" – நாமக்கல்லில் 25 பேருக்கு இணைப்பு சக்கர வாகனம் வழங்கல்',
@@ -863,6 +867,11 @@ class TranslationToggle {
 
     // Apply translations with animation
     this.applyTranslations();
+
+    // Reload gallery if it exists (for dynamic content)
+    if (typeof loadGallery === "function") {
+      loadGallery();
+    }
   }
 
   applyTranslations() {
@@ -917,5 +926,5 @@ class TranslationToggle {
 
 // Initialize translation toggle when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-  new TranslationToggle();
+  window.translationToggleInstance = new TranslationToggle();
 });

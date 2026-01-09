@@ -249,11 +249,7 @@
 												<span class="menu_icon icon-trophy"></span><span data-translate="navAchievements">சாதனைகள்</span>
 											</a>
 										</li>
-										<li class="menu-item thumb_title custom_view_item">
-											<a title="செய்திகள்" href="news.html">
-												<span class="menu_icon icon-doc"></span><span data-translate="navNews">செய்திகள்</span>
-											</a>
-										</li>
+										
 										<li class="menu-item thumb_title custom_view_item">
 											<a title="மனக்குறை" href="district-secretary.html">
 												<span class="menu_icon icon-users"></span><span data-translate="navGrievance">மனக்குறை</span>
@@ -294,7 +290,7 @@
                     <div class="speedBar">
                         <a class="home" href="index.html" data-translate="breadcrumbHome">முகப்பு</a>
 						<span class="breadcrumbs_delimiter"> / </span>
-						<span class="current" data-translate="breadcrumbCurrent">கேலரி</span>
+						<span class="current" data-translate="breadcrumbGallery">கேலரி</span>
 					</div>
                     <h3 class="pageTitle h3" data-translate="galleryTitle">கேலரி</h3>
                 </div>
@@ -343,8 +339,10 @@
 									</figure>
                                     <br />
                                     <img alt="" src="http://placehold.it/550x367">
-                                    <br /> <span class="sc_icon icon-home theme_accent"></span> 378 Main Street London England
-                                    <br /> <span class="sc_icon icon-email theme_accent"></span> info@themerex.net
+                                    <br /> <span class="sc_icon icon-home theme_accent"></span> Namakkal West District DMK Party Office: Located near RVR
+                    Petrol Bunk Corner, Malai Suttri Road, Namakkal Rd,
+                    Tiruchengode - Salem Main Rd, Namakkal, Tamil Nadu 637205.
+                                    <br /> <span class="sc_icon icon-email theme_accent"></span> namakkalwestdmkksm@gmail.com
                                     <br /> <span class="sc_icon icon-phone theme_accent"></span> +1 (44) 123-45-67
 								</div>
                             </aside>
@@ -543,11 +541,17 @@
 			// Add 'last' class to the last item if it's the final one
 			// We'll handle this after generating all items
 
-			// Use Tamil content by default (title_ta, description_ta)
-			const title = item.title_ta || item.title_en || item.title || 'Gallery Item';
-			const description = item.description_ta || item.description_en || item.description || 'Description not available';
+			// Get current language from translation toggle
+			let currentLanguage = 'tamil'; // default
+			if (window.translationToggleInstance && window.translationToggleInstance.currentLanguage) {
+				currentLanguage = window.translationToggleInstance.currentLanguage;
+			}
+
+			// Use appropriate language content
+			const title = (currentLanguage === 'english' ? item.title_en : item.title_ta) || item.title || 'Gallery Item';
+			const description = (currentLanguage === 'english' ? item.description_en : item.description_ta) || item.description || 'Description not available';
 			const imageUrl = item.image || item.imageUrl || 'images/gallery/placeholder.jpg';
-			const altText = item.title_ta || item.title_en || item.title || 'Gallery Image';
+			const altText = (currentLanguage === 'english' ? item.title_en : item.title_ta) || item.title || 'Gallery Image';
 
 			console.log('Gallery item:', { title, imageUrl, link: item.link }); // Debug logging
 
